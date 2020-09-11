@@ -26,8 +26,8 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 <br>
 
 ## Composer_Flow
-<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_flow.png"></p>
+<p align="center"><img width=80% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_flow.png"></p>
 
 ## Differences
-<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_differences.png"></p>
+<p align="center"><img width=80% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/differences.png"></p>
 
