@@ -5,7 +5,7 @@
   </a>
 </p>
 
-<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer.git/blob/master/meta_data/composer.png"></p>
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer.git/blob/master/meta_data/composer_logo.png"></p>
 
 ## Table of Contents
 
