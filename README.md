@@ -1,16 +1,4 @@
-<h1 align="center"> Introduction and demo of 
-[GCP Composer](https://cloud.google.com/composer/docs/concepts/overview) </h1> 
-  ## Help conserve habitat for pollinators {:#conserve-habitat}
-
-  ### Obtaining test permissions {:#test-perms}
-
-  ### Listing all tests for a project {:#listing-tests}
-
-  ## Viewing test results {:#viewing-tests}
-
-  ### Configure two VM instances {:#configure-vms}
-
-  ## Setting an access control policy {:#set-policy}
+<h1 align="center"> Introduction and demo of GCP Composer </h1> 
 
 <br>
 <p align="center">
@@ -22,8 +10,9 @@
 
 ## Table of Contents
 
-- [Introduction](#composer_introduction)
-- [Flow](#flow)
+- [Composer Introduction](#composer_introduction)
+- [Composer Flow](#composer_flow)
+- [Differences between Dataflow and Composer](#differences)
 - [Demo](#demo)
 
 
@@ -32,9 +21,13 @@
 ## Composer_Introduction
 
 Cloud composer is workflow management system that you create, schedule, and monitor data pipelines that utilize the cloud and data centers. Composer is built on a service called Airflow which uses certain workflow configurations.
+For more descrition see the [google documentation](https://cloud.google.com/composer/docs/concepts/overview). 
 
-## Composer_Introduction
+<br>
 
-Cloud composer is workflow management system that you create, schedule, and monitor data pipelines that utilize the cloud and data centers. Composer is built on a service called Airflow which uses certain workflow configurations.
+## Composer_Flow
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_flow.png"></p>
 
+## Differences
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_differences.png"></p>
 
