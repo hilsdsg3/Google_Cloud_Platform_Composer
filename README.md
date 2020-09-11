@@ -1,5 +1,18 @@
-<h1 align="center"> Introduction and demo of [!
-[GCP Composer](https://cloud.google.com/composer/docs/concepts/overview)] </h1> <br>
+<h1 align="center"> Introduction and demo of 
+[GCP Composer](https://cloud.google.com/composer/docs/concepts/overview) </h1> 
+  ## Help conserve habitat for pollinators {:#conserve-habitat}
+
+  ### Obtaining test permissions {:#test-perms}
+
+  ### Listing all tests for a project {:#listing-tests}
+
+  ## Viewing test results {:#viewing-tests}
+
+  ### Configure two VM instances {:#configure-vms}
+
+  ## Setting an access control policy {:#set-policy}
+
+<br>
 <p align="center">
   <a href="https://gitpoint.co/">
     <img alt="" width="450">
