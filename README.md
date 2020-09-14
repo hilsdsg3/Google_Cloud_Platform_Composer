@@ -33,7 +33,8 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 
 ## Composer_Operations
 
-<details><summary>Running sample DAG</summary>
+<details><summary>Running a sample DAG</summary>
+<br>
 <details>
   <summary>1. Creating a Directed Acyclic Graph (DAG) using Python </summary>
   
