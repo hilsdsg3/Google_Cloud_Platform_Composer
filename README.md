@@ -13,6 +13,7 @@
 - [Composer Introduction](#composer_introduction)
 - [Composer Flow](#composer_flow)
 - [Differences between Dataflow and Composer](#differences)
+- [Overview_Composer_Operations](#overview_composer_operations)
 - [Demo](#demo)
 
 
@@ -30,4 +31,60 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 
 ## Differences
 <p align="center"><img width=80% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/differences.png"></p>
+
+## Overview_Composer_Operations
+
+<details>
+  <summary>Creating a Directed Acyclic Graph (DAG) using Python </summary>
+
+Import statements
+```
+import datetime
+from airflow import models
+from airflow.operators import bash_operator
+from airflow.operators import python_operator
+```
+Setting a variable for yesterday so we can be sure our DAG runs when we upload the Python file 
+```
+yesterday = datetime.datetime.combine(
+    datetime.datetime.today() - datetime.timedelta(1),
+    datetime.datetime.min.time())
+default_dag_args = {'start_date': yesterday}
+```
+Setting the interval at 1 day to run the DAG
+```
+with models.DAG(
+        'running_python_and_bash_operator',
+        schedule_interval=datetime.timedelta(days=1),
+        default_args=default_dag_args) as dag:
+```
+Any operators like the following will be added to the DAG object
+```
+# Python function
+hello_world_greeting = python_operator.PythonOperator(
+    task_id='python_1',
+    python_callable=hello_world)
+
+# Python function
+sales_greeting = python_operator.PythonOperator(
+    task_id='python_2',
+    python_callable=greeting)
+
+# Initiation of the bash operator
+bash_greeting = bash_operator.BashOperator(
+    task_id='bye_bash',
+    bash_command='echo Goodbye! Hope to see you soon.')
+```
+Task order
+```
+hello_world_greeting >> sales_greeting >> bash_greeting
+```
+</details>
+
+
+Configuring Trigger rules
+Bash Operator
+Python Operator
+Branch Python Operator
+Dummy Operator
 
