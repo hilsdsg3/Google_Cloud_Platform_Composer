@@ -100,6 +100,7 @@ Note : Airflow has a slider button on the home page that indicates whether the D
 <p align="center"><img width=100% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/airflow_screen_2nd.png"></p>
 </details>
 </details>
+</details>
 
 
 <details><summary>Configuring Trigger rules</summary>
@@ -111,7 +112,7 @@ default_dag_args = {
     'retries': 1,
     'retry_delay': datetime.timedelta(minutes=2)}
 ```
-Also when triggered, we forced a ValueError 
+Also when triggered, we forced a ValueError to see if we get the proper response from running the DAG. 
 ```
 def hello_world():
     raise ValueError('Oops! something went wrong.')
