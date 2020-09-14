@@ -89,6 +89,7 @@ hello_world_greeting >> sales_greeting >> bash_greeting
 </details>
 
 <summary>3. Open the Airflow console through the GCP Composer view </summary>
+<br>
 
 <details>
 <summary>4. Airflow overview and detail screens </summary>
