@@ -35,7 +35,7 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 ## Overview_Composer_Operations
 
 <details>
-  <summary>Creating a Directed Acyclic Graph (DAG) using Python </summary>
+  <summary>1. Creating a Directed Acyclic Graph (DAG) using Python </summary>
 
 Python_bash.py
 
@@ -82,8 +82,16 @@ Task order
 hello_world_greeting >> sales_greeting >> bash_greeting
 ```
 
-Upload the python script to the preformed bucket
+2. Upload the python script to the preformed bucket
 <p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/upload_script.png"></p>
+
+3. Open the Airflow console through the GCP Composer view
+4. Airflow overview and detail screens
+Note : Airflow has a slider button on the home page that indicates whether the DAG is live or dead. When using a test DAG to avoid GCP charges it is advisable to have the trigger off by turning the button to off status.
+
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/airflow_screen_1st.png"></p>
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/airflow_screen_2nd.png"></p>
+
 
 </details>
 
