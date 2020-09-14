@@ -1,4 +1,4 @@
-<h1 align="center"> Introduction and demo of GCP Composer </h1> 
+<h1 align="center"> Google Cloud Composer </h1> 
 
 <br>
 <p align="center">
@@ -13,7 +13,7 @@
 - [Composer Introduction](#composer_introduction)
 - [Composer Flow](#composer_flow)
 - [Differences between Dataflow and Composer](#differences)
-- [Overview_Composer_Operations](#overview_composer_operations)
+- [Composer_Operations](#composer_operations)
 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -31,9 +31,9 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 ## Differences
 <p align="center"><img width=80% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/differences.png"></p>
 
-## Overview_Composer_Operations
+## Composer_Operations
 
-<details><summary>Running the 1st sample DAG</summary>
+<details><summary>Running sample DAG</summary>
 <details>
   <summary>1. Creating a Directed Acyclic Graph (DAG) using Python </summary>
   
