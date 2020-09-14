@@ -37,6 +37,8 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 <details>
   <summary>Creating a Directed Acyclic Graph (DAG) using Python </summary>
 
+Python_bash.py
+
 Import statements
 ```
 import datetime
@@ -79,6 +81,10 @@ Task order
 ```
 hello_world_greeting >> sales_greeting >> bash_greeting
 ```
+
+Upload the python script to the preformed bucket
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/upload_script.png"></p>
+
 </details>
 
 
