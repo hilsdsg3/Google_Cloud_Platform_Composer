@@ -14,7 +14,6 @@
 - [Composer Flow](#composer_flow)
 - [Differences between Dataflow and Composer](#differences)
 - [Overview_Composer_Operations](#overview_composer_operations)
-- [Demo](#demo)
 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -34,6 +33,7 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 
 ## Overview_Composer_Operations
 
+<details><summary>Running the 1st sample DAG</summary>
 <details>
   <summary>1. Creating a Directed Acyclic Graph (DAG) using Python </summary>
   
@@ -93,16 +93,94 @@ hello_world_greeting >> sales_greeting >> bash_greeting
 
 <details>
 <summary>4. Airflow overview and detail screens </summary>
-Note : Airflow has a slider button on the home page that indicates whether the DAG is live or dead. When using a test DAG to avoid GCP charges it is advisable to have the trigger off by turning the button to off status.
+<br>
+Note : Airflow has a slider button on the home page that indicates whether the DAG is active or non-active. When using a test DAG to avoid GCP charges, it is advisable to have the trigger off by turning the button to off status.
 
 <p align="center"><img width=100% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/airflow_screen_1st.png"></p>
 <p align="center"><img width=100% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/airflow_screen_2nd.png"></p>
 </details>
+</details>
 
 
-Configuring Trigger rules
-Bash Operator
-Python Operator
-Branch Python Operator
-Dummy Operator
+<details><summary>Configuring Trigger rules</summary>
+
+The following code sets the retry statement at 1 and the retry delay at 2min 
+```
+default_dag_args = {
+    'start_date': yesterday,
+    'retries': 1,
+    'retry_delay': datetime.timedelta(minutes=2)}
+```
+Also when triggered, we forced a ValueError 
+```
+def hello_world():
+    raise ValueError('Oops! something went wrong.')
+    print('Hello World!')
+    return 1
+```
+
+The DAG ran as expected and gave us an error.
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/failure_retry_1.png"></p>
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/failure_retry_2.png"></p>
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/failure_retry_3.png"></p>
+
+A triggering rule can also be set with the bash operator
+```
+bash_greeting = bash_operator.BashOperator(
+    task_id='bye_bash',
+    bash_command='echo Goodbye! Hope to see you soon.',
+    trigger_rule=trigger_rule.TriggerRule.ONE_FAILED)
+```
+</details>
+
+<details><summary>Dummy Operator</summary>
+
+In python_dash_dummy.py, an additional dummy statement is added for branching.
+Because most branching has a join operation, the dummy statement fills one of legs when branching. 
+```
+# Addiotions to the python code
+def makeBranchChoice():
+        x = random.randint(1, 5)
+        if(x <= 2):
+            return 'hello'
+        else:
+            return 'dummy'  
+    run_this_first = dummy_operator.DummyOperator(
+        task_id='run_this_first')
+    branching = python_operator.BranchPythonOperator(
+        task_id='branching',
+        python_callable=makeBranchChoice)
+    run_this_first >> branching
+    sales_greeting = python_operator.PythonOperator(
+        task_id='hello',
+        python_callable=greeting)
+    dummy_followed_python = dummy_operator.DummyOperator(
+        task_id='follow_python')
+    dummy = dummy_operator.DummyOperator(
+        task_id='dummy')
+    bash_greeting = bash_operator.BashOperator(
+        task_id='bye_bash',
+        bash_command='echo Goodbye! Hope to see you soon.',
+        trigger_rule='one_success'
+    )
+```
+
+The above code generated a path with a dummy operator. In the if-else condition, the x > 2 so it followed the dummy path. If a dummy path was not programmed the DAG would have failed.
+
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/branching_python_1.png"></p>
+<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/branching_python_2.png"></p>
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
 

@@ -24,15 +24,14 @@ with models.DAG(
         return 1
 
     def greeting():
-        print('Greetings from SpikeySales! Happy shopping.')
+        print('Greetings from Sales! Happy shopping.')
         return 'Greeting successfully printed.'
 
     hello_world_greeting = python_operator.PythonOperator(
         task_id='python_1',
         python_callable=hello_world)
     
-
-    spikeysales_greeting = python_operator.PythonOperator(
+    sales_greeting = python_operator.PythonOperator(
         task_id='python_2',
         python_callable=greeting)
 
@@ -43,4 +42,4 @@ with models.DAG(
     end = dummy_operator.DummyOperator(
         task_id='dummy')
 
-    hello_world_greeting >> spikeysales_greeting >> bash_greeting >> end
+    hello_world_greeting >> sales_greeting >> bash_greeting >> end

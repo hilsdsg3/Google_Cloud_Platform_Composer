@@ -35,7 +35,7 @@ with models.DAG(
         python_callable=hello_world)
     
 
-    spikeysales_greeting = python_operator.PythonOperator(
+    sales_greeting = python_operator.PythonOperator(
         task_id='python_2',
         python_callable=greeting)
 
@@ -44,4 +44,4 @@ with models.DAG(
         bash_command='echo Goodbye! Hope to see you soon.',
         trigger_rule=trigger_rule.TriggerRule.ONE_FAILED)
 
-    hello_world_greeting >> spikeysales_greeting >> bash_greeting
+    hello_world_greeting >> sales_greeting >> bash_greeting
