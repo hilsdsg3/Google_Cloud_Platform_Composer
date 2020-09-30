@@ -43,7 +43,7 @@ with models.DAG(
 
     run_this_first >> branching
           
-    spikeysales_greeting = python_operator.PythonOperator(
+    ales_greeting = python_operator.PythonOperator(
         task_id='hello_spikey',
         python_callable=greeting)
 
@@ -59,5 +59,5 @@ with models.DAG(
         trigger_rule='one_success'
     )
 
-    branching >> spikeysales_greeting >> dummy_followed_python >> bash_greeting
+    branching >> sales_greeting >> dummy_followed_python >> bash_greeting
     branching >> dummy >> bash_greeting

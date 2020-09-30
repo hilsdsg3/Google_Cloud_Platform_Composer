@@ -1,3 +1,12 @@
+<h3 align="left"> ***Goals of this repo : *** </h3>
+<p>
+1. Introduce GCP Composer which is a data job scheduler
+<br>
+2. Demo GCP Composer
+</p>
+<br>
+<br>
+<br>
 <h1 align="center"> Google Cloud Composer </h1> 
 
 <br>
@@ -6,7 +15,7 @@
     <img alt="" width="450">
   </a>
 </p>
-<p align="center"><img width=60% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_logo.png"></p>
+<p align="center"><img width=40% src="https://github.com/hilsdsg3/Google_Cloud_Platform_Composer/blob/master/meta_data/composer_logo.png"></p>
 
 ## Table of Contents
 
@@ -103,7 +112,8 @@ Note : Airflow has a slider button on the home page that indicates whether the D
 </details>
 </details>
 
-
+<br>
+<br>
 <details><summary>Configuring Trigger rules</summary>
 
 The following code sets the retry statement at 1 and the retry delay at 2min 
