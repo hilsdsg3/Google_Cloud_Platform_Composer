@@ -1,4 +1,4 @@
-## **Goals of this repo : **
+## Goals of this repo :
 
 <p>
 1. Introduce GCP Composer which is a data job scheduler
