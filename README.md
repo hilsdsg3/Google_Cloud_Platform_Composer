@@ -43,7 +43,7 @@ For more descrition see the [google documentation](https://cloud.google.com/comp
 
 # Composer_Operations
 <br>
-<h3 align="center"> Running a sample DAG </h3> 
+<h2 align="center"> Running a sample DAG </h2> 
 <br>
 <details>
   <summary>1. Creating a Directed Acyclic Graph (DAG) using Python </summary>
@@ -115,7 +115,7 @@ Note : Airflow has a slider button on the home page that indicates whether the D
 
 <br>
 <br>
-<h3 align="center"> Configuring Trigger rules</h3>
+<h2 align="center"> Configuring Trigger rules</h2>
 
 The following code sets the retry statement at 1 and the retry delay at 2min 
 ```
@@ -146,7 +146,7 @@ bash_greeting = bash_operator.BashOperator(
 ```
 </details>
 
-<h3 align="center"> Dummy Operator</h3>
+<h2 align="center"> Dummy Operator</h2>
 
 In python_dash_dummy.py, an additional dummy statement is added for branching.
 Because most branching has a join operation, the dummy statement fills one of legs when branching. 
