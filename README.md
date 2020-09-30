@@ -1,4 +1,4 @@
-<h3 align="left"> ***Goals of this repo : *** </h3>
+<h3 align="left"> **Goals of this repo : ** </h3>
 <p>
 1. Introduce GCP Composer which is a data job scheduler
 <br>
